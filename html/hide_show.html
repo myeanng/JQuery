@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>hide_show</title>
+    <script src="../js/jquery-2.2.3.js"></script>
+    <script>
+  $(document).ready(function() {
+    $("#b1").click(function() {
+    if("隐藏"==$(this).text()){
+      //第一个参数是可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+      //第二个参数是可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+      $("#d1").hide('slow', function() {
+        alert("隐藏完毕。。。");
+      });
+      $(this).text("展示");
+    }else if ("展示"==$(this).text()) {
+      $("#d1").show('0', function() {
+        alert("展示会很漫长。。。。。。");
+      });;
+      $(this).text("隐藏");
+    }
+    });
+  });
+
+    </script>
+    <style>
+    #d1{
+      background: red;
+      background-image: url(../img/1.jpg);
+      background-position:center;
+      height: 500px;
+    }
+    #b1{
+      color: green;
+      background: yellow;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="d1">我是文本。。。</div>
+    <button id="b1">隐藏</button>
+  </body>
+</html>
